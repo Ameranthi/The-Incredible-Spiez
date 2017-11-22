@@ -35,18 +35,41 @@ public class Project {
         }
         return location;
     }
-            
+    
+    public static String City(){
+        int randCity = 5; // variable for which city is randomly chosen
+        String city = "";
+        Random rand = new Random();
+        randPlace = rand.nextInt(5);
+        if (randCity == 0) {
+            city = "Moscow";
+        }
+        if (randCity == 1) { 
+            city = "Shanghai";
+        }
+        if (randCity == 2) {
+            city = "London";
+        }
+        if (randCity == 3) {
+            city = "Copenhagen";
+        }
+        if (randCity == 4) {
+            city = "Washington";
+        }
+        return city;
+        
+    }
     
 
     public static void Easy() {
         Random rand = new Random();
         Scanner kb = new Scanner(System.in);
         System.out.println("Decode the secret message below!\n");
-        String location = Location(); // location is the retunred location from the Location method
+        String city = City(); // city is the retunred city from the City method
         boolean keepPlaying = true; // keeps track if the user still wats to play
         int roundProgress = 1; // changes the difficulty as more words are found
         //while (keepPlaying=true) {
-        for (int i=0; i<location.length(); i++) {
+        for (int i=0; i<city.length(); i++) {
             int num1, num2, addSub; // addSub decides if question will be addition or subtraction
             num1 = rand.nextInt(10);
             num2 = rand.nextInt(10);
@@ -56,21 +79,21 @@ public class Project {
                 if (addSub == 0) { // this question is addition
                     System.out.print(num1 + " + " + num2 + " = ");
                     int answer = kb.nextInt();
-                    if (answer == num1+num2 && i == location.length() - 1) { // when the last letter is found
-                        System.out.print(i+1 + "/" + location.length() + " of the message decoded! ");
-                        System.out.print("You found the letter " + location.charAt(i));
+                    if (answer == num1+num2 && i == city.length() - 1) { // when the last letter is found
+                        System.out.print(i+1 + "/" + city.length() + " of the message decoded! ");
+                        System.out.print("You found the letter " + city.charAt(i));
                         System.out.println(". You found the last one!\n");
                         correct = true; // the math question was solved correctly
                  }
-                    else if (answer == num1+num2 && i >= location.length() - 3) { // when the word is almost solved
-                        System.out.print(i+1 + "/" + location.length() + " of the job done! ");
-                        System.out.print("You found the letter " + location.charAt(i));
+                    else if (answer == num1+num2 && i >= city.length() - 3) { // when the word is almost solved
+                        System.out.print(i+1 + "/" + city.length() + " of the job done! ");
+                        System.out.print("You found the letter " + city.charAt(i));
                         System.out.println(". We're really close now!\n");
                         correct = true; // the math question was solved correctly
                     }
                     else if (answer == num1+num2) { // when a letter is found, but word not almost solved
-                        System.out.print(i+1 + "/" + location.length() + " parts done! ");
-                        System.out.print("You found the letter " + location.charAt(i));
+                        System.out.print(i+1 + "/" + city.length() + " parts done! ");
+                        System.out.print("You found the letter " + city.charAt(i));
                         System.out.println(". Good work! On to the next one:\n");
                         correct = true; // the math question was solved correctly
                     }
@@ -82,21 +105,21 @@ public class Project {
                 else { // this question is subtraction
                     System.out.print(num1 + " - " + num2 + " = ");
                     int answer = kb.nextInt();
-                    if (answer == num1-num2 && i == location.length() - 1) { // when the last letter is found
-                        System.out.print(i+1 + "/" + location.length() + " of the message decoded! ");
-                        System.out.print("You found the letter " + location.charAt(i));
+                    if (answer == num1-num2 && i == city.length() - 1) { // when the last letter is found
+                        System.out.print(i+1 + "/" + city.length() + " of the message decoded! ");
+                        System.out.print("You found the letter " + city.charAt(i));
                         System.out.println(". You found the last one!\n");
                         correct = true; // the math question was solved correctly
                  }
-                    else if (answer == num1-num2 && i >= location.length() - 3) { // when the word is almost solved
-                        System.out.print(i+1 + "/" + location.length() + " of the job done! ");
-                        System.out.print("You found the letter " + location.charAt(i));
+                    else if (answer == num1-num2 && i >= city.length() - 3) { // when the word is almost solved
+                        System.out.print(i+1 + "/" + city.length() + " of the job done! ");
+                        System.out.print("You found the letter " + city.charAt(i));
                         System.out.println(". We're really close now!\n");
                         correct = true; // the math question was solved correctly
                     }
                     else if (answer == num1-num2) { // when a letter is found, but word not almost solved
-                        System.out.print(i+1 + "/" + location.length() + " parts done! ");
-                        System.out.print("You found the letter " + location.charAt(i));
+                        System.out.print(i+1 + "/" + city.length() + " parts done! ");
+                        System.out.print("You found the letter " + city.charAt(i));
                         System.out.println(". Good work! On to the next one:\n");
                         correct = true; // the math question was solved correctly
                     }
@@ -106,7 +129,7 @@ public class Project {
                 }
             }
         }
-        System.out.println("You decoded the word " + location +"!");
+        System.out.println("You decoded the word " + city +"!");
         //}
 
     }
