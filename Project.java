@@ -71,8 +71,8 @@ public class Project {
         //while (keepPlaying=true) {
         for (int i=0; i<city.length(); i++) {
             int num1, num2, addSub; // addSub decides if question will be addition or subtraction
-            num1 = rand.nextInt(10);
-            num2 = rand.nextInt(10);
+            num1 = rand.nextInt(10 * roundProgress); // num randomly chosen. 1 didget if round 1, 2 didget if round 2, etc
+            num2 = rand.nextInt(10 * roundProgress); // num randomly chosen. 1 didget if round 1, 2 didget if round 2, etc
             addSub = rand.nextInt(1); //addSub can either be 0 or 1, for adding or subtracting
             boolean correct = false; // counter for if the question was answered correctly
             while (correct==false) {
@@ -128,6 +128,7 @@ public class Project {
                     }
                 }
             }
+        roundProgess *= 10;
         }
         System.out.println("You decoded the word " + city +"!");
         //}
