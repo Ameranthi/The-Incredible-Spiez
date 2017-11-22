@@ -9,7 +9,6 @@ import java.util.Random;
 import java.util.Scanner;
 public class Project {
     public static void main(String[] args) {
-        // System.out.println("Difficulty selected is " + difficulty + ".");
         Easy();
     }
     
