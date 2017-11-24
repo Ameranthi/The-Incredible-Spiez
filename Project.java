@@ -241,17 +241,16 @@ public class Project {
             if (userContinue.equalsIgnoreCase("No")) { // if they dont want to keep playing
                 keepPlaying = false; // keepPlaying counter changes to false
             }
-        }
-        if (keepPlaying == false && roundNum == 4) { // messages displayed if the user quits after round 4
-            System.out.println("Thanks for your help. Please try and assist us again soon. We were so close!");
-        }
-        else if (keepPlaying == true && roundNum == 4) { // when user completes addition and subtraction mode
-            String location = Location(roundNum); // calling method: Location a final time
+            if (keepPlaying == true) { // if user completes addition and subtraction mode
             String finalMsg = "Congratulations agent " + userName + "! Inside of the " + location + " that you discovered," +
             " we were able to figure out Syndrome's evil plans! Thank you for your help agent, your" +
             " assistance was invaluable in saving the world!";
             JOptionPane.showMessageDialog(null,finalMsg);
+            }
         }
-
+        if (keepPlaying == false && roundNum == 4) { // messages displayed if the user quits after round 4
+            System.out.println("Thanks for your help. Please try and assist us again soon. We were so close!");
+    
+        }
     }
 }
