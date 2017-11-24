@@ -7,17 +7,35 @@ package project;
 
 import java.util.Random;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
+
 public class Project {
     public static void main(String[] args) {
-        Easy();
+        Scanner kb = new Scanner(System.in);
+        System.out.print("Greetings agent. Please enter your name: ");
+        String name = kb.nextLine();
+        int mode = ModeChoose(name); // which mode the user chose
+        if (mode == 1) { // when the user chose adding and subtracting
+            AddSub(name); // calling the addition and subtraction level
+        }
+    }
+
+    public static int ModeChoose(String name) { // Entering the username, and choosing which mode to play
+        Scanner kb = new Scanner(System.in);
+        System.out.println("Welcome to The Incredible Spiez Agent " + name + ". Let's begin!\n");
+        System.out.println("Mission Update:");
+        System.out.print("Syndrome (aka Buddy Pine) is sending out encrypted messages.");
+        System.out.println(" We need you to decode them in order to find and stop him.");
+        System.out.print("Please choose a mode. Enter 1 for addition and subtraction, 2 for multiplication");
+        System.out.print(" and division, or 3 for BEDMAS.\n -> ");
+        int mode = kb.nextInt();
+        return mode;
     }
     
-    
-    public static String Location(int roundNum){
-        int randPlace = 5; // variable for which location is randomly selected
+    public static String Location(int roundNum){ // this method randomlly chooses locations for each of the 4 rounds
         String location = "";
         Random rand = new Random();
-        randPlace = rand.nextInt(5);
+        int randPlace = rand.nextInt(5); // variable for which location is randomly selected
         if (roundNum==1) { // locations for first round
             if (randPlace == 0) {
                 location = "Moscow";
@@ -87,10 +105,11 @@ public class Project {
             }
         }
         return location;
+        
     }
     
     
-    public static void Easy() {
+    public static void AddSub(String userName) {
         Random rand = new Random();
         Scanner kb = new Scanner(System.in);
         System.out.println("Decode the secret message below!\n");
@@ -104,6 +123,12 @@ public class Project {
                 num1 = rand.nextInt(10 * roundProgress); // num randomly chosen. 1 didget if round 1, 2 didget if round 2, etc
                 num2 = rand.nextInt(10 * roundProgress); // num randomly chosen. 1 didget if round 1, 2 didget if round 2, etc
                 addSub = rand.nextInt(2); //addSub can either be 0 or 1, for adding or subtracting
+                if (addSub == 1) { // if it is subtraction
+                    while (num1 - num2 < 0) { // ensuring that differences will all be positive
+                        num1 = rand.nextInt(10 * roundProgress); // new num1 randomly chosen
+                        num2 = rand.nextInt(10 * roundProgress); // new num2 randomly chosen  
+                    }
+                }
                 boolean correct = false; // counter for if the question was answered correctly
                 while (correct==false) {
                     if (addSub == 0) { // this question is addition
@@ -159,7 +184,7 @@ public class Project {
                     }
                 }
             }
-            System.out.println("You decoded the word " + location +"!");
+            System.out.println("Agent " + userName + ", you decoded the word " + location +"!");
             if (roundNum == 1) { // when its the first round
                 System.out.print("Should we go to " + location);
                 System.out.print("? (type \"yes\" to move to level 2, \"no\" to quit): ");
@@ -212,17 +237,17 @@ public class Project {
             }
             System.out.print("Should we take the " + location);
             System.out.print("? (type \"yes\" to take it, \"no\" to quit): ");
-            String userContinue = kb.nextLine();
+            String userContinue = kb.next();
             if (userContinue.equalsIgnoreCase("No")) { // if they dont want to keep playing
                 keepPlaying = false; // keepPlaying counter changes to false
             }
         }
-        if (keepPlaying == false) { // messages displayed if the user quits after round 4
-            System.out.println("");
+        if (keepPlaying == false && roundNum == 4) { // messages displayed if the user quits after round 4
+            System.out.println("Thanks for your help. Please try and assist us again soon. We were so close!");
         }
-        else { // when user completes easy mode
+        else if (keepPlaying == true && roundNum == 4) { // when user completes addition and subtraction mode
             String location = Location(roundNum); // calling method: Location a final time
-            String finalMsg = "Congratulations! Inside of the " + location + " that you discovered," +
+            String finalMsg = "Congratulations agent " + userName + "! Inside of the " + location + " that you discovered," +
             " we were able to figure out Syndrome's evil plans! Thank you for your help agent, your" +
             " assistance was invaluable in saving the world!";
             JOptionPane.showMessageDialog(null,finalMsg);
