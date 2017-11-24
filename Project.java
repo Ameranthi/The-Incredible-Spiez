@@ -112,7 +112,7 @@ public class Project {
     public static void AddSub(String userName) {
         Random rand = new Random();
         Scanner kb = new Scanner(System.in);
-        System.out.println("Decode the secret message below!\n");
+        System.out.println("\nDecode the secret message below!\n");
         boolean keepPlaying = true; // keeps track if the user still wats to play
         int roundProgress = 1; // changes the difficulty as more words are found
         int roundNum = 1; //  counter for what round is the user on
