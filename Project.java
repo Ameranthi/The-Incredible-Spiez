@@ -30,7 +30,7 @@ public class Project {
         System.out.print("Syndrome (aka Buddy Pine) is sending out encrypted messages.");
         System.out.println(" We need you to decode them in order to find and stop him.");
         System.out.print("Please choose a mode. Enter 1 for addition and subtraction, 2 for multiplication");
-        System.out.print(" and division, or 3 for BEDMAS.\n -> ");
+        System.out.print(" and division, or 3 for fractions.\n -> ");
         int mode = kb.nextInt();
         return mode;
     }
