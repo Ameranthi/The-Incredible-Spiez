@@ -1,8 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * I added all of our parts together the best I could. I also tried to get the indentation correct.
+   We should look over the code together tonight, and then make sure the report is done well.
+    ~ Nick
  */
+
 package project;
 
 import java.util.Random;
