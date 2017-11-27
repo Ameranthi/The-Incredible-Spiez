@@ -6,7 +6,14 @@
 
 /* This program is a children's math game. It has a spy theme. The program asks for the user's name, and then asks which
    mode they'd like to play. The modes are addition/subtraction, multiplication/division, and fraction comparisson. 
-
+   Each mode consists of 4 rounds. Each round is harder than the last. In round 1, the user is trying to "decode" a city
+   name. Each letter correlates to a math question. If they correctly solve the question, the corresponding letter is
+   revealed. The second, third, and fourth rounds respectivly are "decoding" a landmark name, a locaation inside of said
+   landmark, and a way of storing information. Each round's word to be "decoded" is randomly selected from a list. There is
+   5 possible words for each round. For example, a game could play out such that the user progresses first to London, then to
+   the parliment, then to the basement, and then finally they find a USB stick. The math problems themselves are also randomized.
+   For example, in adding/subtracting round 1, the problems involve adding/subtracting of 1 didget numbers. Round 3 involved 3 
+   didget numbers. When the user successfully finishes 4 rounds, a pop-up window congratulating the user appears.
 */
 
 
