@@ -259,7 +259,7 @@ public class Project {
             }
             if (keepPlaying == true) { // if user completes addition and subtraction mode
             String finalMsg = "Congratulations agent " + userName + "! Inside of the " + location + " that you discovered," +
-            " we were able to figure out Syndrome's evil plans! Thank you for your help agent, your" +
+            " we were able to figure out Syndrome's evil plans! \nThank you for your help agent, your" +
             " assistance was invaluable in saving the world!";
             JOptionPane.showMessageDialog(null,finalMsg);
             }
@@ -418,10 +418,10 @@ public class Project {
          if (userContinue.equalsIgnoreCase("No")) { // if they dont want to keep playing
             keepPlaying = false; // keepPlaying counter changes to false
          }
-         if (keepPlaying == true) { // if user completes addition and subtraction mode
+         if (keepPlaying == true) { // if user completes Multiplication/division mode
             String finalMsg = "Congratulations agent " + userName + "! Inside of the " + location + " that you discovered," +
-               " we were able to figure out Syndrome's evil plans! Thank you for your help agent, your" +
-               " assistance was invaluable in saving the world!";
+            " we were able to figure out Syndrome's evil plans! \nThank you for your help agent, your" +
+            " assistance was invaluable in saving the world!";
             JOptionPane.showMessageDialog(null,finalMsg);
          }
       }
@@ -599,7 +599,7 @@ public class Project {
             if (userContinue.equalsIgnoreCase("No")) { // if they dont want to keep playing
                keepPlaying = false; // keepPlaying counter changes to false
             }
-            if (keepPlaying == true) { // if user completes addition and subtraction mode
+            if (keepPlaying == true) { // if user completes Fraction mode
                String finalMsg = "Congratulations agent " + userName + "! Inside of the " + location + " that you discovered," +
             " we were able to figure out Syndrome's evil plans! \nThank you for your help agent, your" +
             " assistance was invaluable in saving the world!";
