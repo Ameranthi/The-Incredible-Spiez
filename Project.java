@@ -18,6 +18,9 @@ public class Project {
         if (mode == 1) { // when the user chose adding and subtracting
             AddSub(name); // calling the addition and subtraction level
         }
+        else if (mode == 3) { //fraction comparison level
+            fraction(name);
+        }
     }
 
     public static int ModeChoose(String name) { // Entering the username, and choosing which mode to play
