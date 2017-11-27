@@ -4,6 +4,12 @@
     ~ Nick
  */
 
+/* This program is a children's math game. It has a spy theme. The program asks for the user's name, and then asks which
+   mode they'd like to play. The modes are addition/subtraction, multiplication/division, and fraction comparisson. 
+
+*/
+
+
 package project;
 
 import java.util.Random;
@@ -595,7 +601,7 @@ public class Project {
             }
             if (keepPlaying == true) { // if user completes addition and subtraction mode
                String finalMsg = "Congratulations agent " + userName + "! Inside of the " + location + " that you discovered," +
-            " we were able to figure out Syndrome's evil plans! Thank you for your help agent, your" +
+            " we were able to figure out Syndrome's evil plans! \nThank you for your help agent, your" +
             " assistance was invaluable in saving the world!";
             JOptionPane.showMessageDialog(null,finalMsg);
             }
