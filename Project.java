@@ -484,7 +484,7 @@ public class Project {
                         num4D=num4;
                         System.out.print("Is "+num1 + "/" + num2+" greater than, less than, or equal to "+num3+"/"+num4+"? "); 
                         System.out.print("(Enter >, <, or =.): ");
-                        String answer = kb.nextLine();
+                        String answer = kb.next();
                         //if statements for when the first fraction is greater than the second fraction
                         if (answer.equals(">") && num1D/num2D > num3D/num4D && i == location.length() - 1) { // when the last letter is found
                             System.out.print(i+1 + "/" + location.length() + " of the message decoded! ");
@@ -604,7 +604,7 @@ public class Project {
                     num3D=num3;
                     num4D=num4;
                     System.out.print("can you solve the last question? " + num1 + " + " + num2 + " = ");
-                    String answer = kb.nextLine();
+                    String answer = kb.next();
                     if (answer.equals("greater than") && num1D/num2D > num3D/num4D) { 
                         System.out.println("You found the word " + location);
                         correct = true; // the question was answered correctly
