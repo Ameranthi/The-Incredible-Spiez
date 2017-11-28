@@ -1,9 +1,3 @@
-/*
- * I added all of our parts together the best I could. I also tried to get the indentation correct.
-   We should look over the code together tonight, and then make sure the report is done well.
-    ~ Nick
- */
-
 /* This program is a children's math game. It has a spy theme. The program asks for the user's name, and then asks which
    mode they'd like to play. The modes are addition/subtraction, multiplication/division, and fraction comparisson. 
    Each mode consists of 4 rounds. Each round is harder than the last. In round 1, the user is trying to "decode" a city
