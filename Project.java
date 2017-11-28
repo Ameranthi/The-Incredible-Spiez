@@ -603,17 +603,18 @@ public class Project {
                     num2D=num2;
                     num3D=num3;
                     num4D=num4;
-                    System.out.print("can you solve the last question? " + num1 + " + " + num2 + " = ");
+                    System.out.println("Can you solve the last question?");
+                    System.out.print("Is "+num1 + "/" + num2+" greater than, less than, or equal to "+num3+"/"+num4+"? ");
                     String answer = kb.next();
-                    if (answer.equals("greater than") && num1D/num2D > num3D/num4D) { 
+                    if (answer.equals(">") && num1D/num2D > num3D/num4D) { 
                         System.out.println("You found the word " + location);
                         correct = true; // the question was answered correctly
                     }
-                        else if (answer.equals("less than") && num1D/num2D < num3D/num4D) { 
+                        else if (answer.equals("<") && num1D/num2D < num3D/num4D) { 
                         System.out.println("You found the word " + location);
                         correct = true; // the question was answered correctly
                     }
-                        else if (answer.equals("equal to") && num1D/num2D==num3D/num4D) { // when the last letter is found
+                        else if (answer.equals("=") && num1D/num2D==num3D/num4D) { // when the last letter is found
                         System.out.println("You found the word " + location);
                         correct = true; // the question was answered correctly
                     }
