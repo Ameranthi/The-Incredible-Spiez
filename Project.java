@@ -336,7 +336,7 @@ public class Project {
                         }
                         else { // this question is for Division
                             System.out.println(num1 + " / " + num2 + " = ");
-                            System.out.println("Remeber to put two decimal places when dividing");
+                            System.out.println("Remember to put two decimal places when dividing");
                             double correctAnswer=(double)num1/(double)num2;
                             String correctRounded=String.format("%6.2f", correctAnswer); //rounds to two decimal places
                             double answer = kb.nextDouble();
